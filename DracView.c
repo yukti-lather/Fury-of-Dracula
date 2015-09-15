@@ -11,8 +11,19 @@
 
 //Rimmal
 struct dracView {
-    //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-    int hello;
+    Map gameMap;
+    GameView gameView;
+    Round currentRound;
+    PlayerID currentPlayer;
+    int Health[NUM_PLAYERS]; 
+    int locationTrail[NUM_PLAYERS][TRAIL_SIZE];  
+    LocationID dracLocation;
+    int currentScore;
+    int currentRound;
+    int currentTurn;
+    int traps[NUM_MAP_LOCATIONS];
+    LocationID visited[TRAIL_SIZE];
+    
 };
 
 
