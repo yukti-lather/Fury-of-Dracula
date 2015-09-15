@@ -5,12 +5,25 @@
 #include "Globals.h"
 #include "Game.h"
 #include "GameView.h"
+#include "Map.h"
 // #include "Map.h" ... if you decide to use the Map ADT
 //Rimmal
 struct gameView {
-    //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-    int hello;
-};
+    
+    Map gameMap;
+    Round currentRound;
+    PlayerID players[NUM_PLAYERS];
+    PlayerID currentPlayer;
+    PlayerMessage messages[];
+    int Health[NUM_PLAYERS];
+    int trail[NUM_PLAYERS][TRAIL_SIZE];
+    int currentScore;
+    int currentTurn; 
+    
+    //char *pastPlays;
+    //LocationID encounters[TRAIL_SIZE];
+  
+}
      
 //Rimmal
 // Creates a new GameView to summarise the current state of the game
