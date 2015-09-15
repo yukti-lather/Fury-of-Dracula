@@ -23,7 +23,7 @@ struct gameView {
     //char *pastPlays;
     //LocationID encounters[TRAIL_SIZE];
   
-}
+};
      
 //Rimmal
 // Creates a new GameView to summarise the current state of the game
