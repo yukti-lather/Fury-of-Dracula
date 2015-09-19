@@ -1,4 +1,4 @@
-// DracView.c ... DracView ADT implementation
+// HunterView.c ... HunterView ADT implementation
 
 #include <stdlib.h>
 #include <assert.h>
