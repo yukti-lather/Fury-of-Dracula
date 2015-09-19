@@ -5,12 +5,12 @@
 #include "Globals.h"
 #include "Game.h"
 #include "GameView.h"
-#include "DracView.h"
+#include "HunterView.h"
 #include "Map.h" 
 
 
 //Rimmal
-struct dracView {
+struct hunterView {
     
     Map gameMap;
     GameView gameView;
@@ -27,28 +27,35 @@ struct dracView {
 
 
 //Rimmal
-// Creates a new DracView to summarise the current state of the game
-DracView newDracView(char *pastPlays, PlayerMessage messages[])
+// Creates a new HunterView to summarise the current state of the game
+HunterView newHunterView(char *pastPlays, PlayerMessage messages[])
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     DracView dracView = malloc(sizeof(struct dracView));
-    dracView->hello = 42;
+    //dracView->hello = 42;
     return dracView;
 }
      
 //Rimmal
-// Frees all memory previously allocated for the DracView toBeDeleted
-void disposeDracView(DracView toBeDeleted)
+// Frees all memory previously allocated for the HunterView toBeDeleted
+void disposeHunterView(HunterView toBeDeleted)
 {
     //COMPLETE THIS IMPLEMENTATION
     free( toBeDeleted );
 }
 
-//Vivian
-//// Functions to return simple information about the current state of the game
 
+//// Functions to return simple information about the current state of the game
+//Vivian
 // Get the current round
-Round giveMeTheRound(DracView currentView)
+Round giveMeTheRound(HunterView currentView)
+{
+    //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
+    return 0;
+}
+//Yukti
+// Get the id of current player
+PlayerID whoAmI(HunterView currentView)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     return 0;
@@ -56,7 +63,7 @@ Round giveMeTheRound(DracView currentView)
 
 //Jessie
 // Get the current score
-int giveMeTheScore(DracView currentView)
+int giveMeTheScore(HunterView currentView)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     return 0;
@@ -65,7 +72,7 @@ int giveMeTheScore(DracView currentView)
 
 //Jessie
 // Get the current health points for a given player
-int howHealthyIs(DracView currentView, PlayerID player)
+int howHealthyIs(HunterView currentView, PlayerID player)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     return 0;
@@ -73,37 +80,18 @@ int howHealthyIs(DracView currentView, PlayerID player)
 
 //Yukti
 // Get the current location id of a given player
-LocationID whereIs(DracView currentView, PlayerID player)
+LocationID whereIs(HunterView currentView, PlayerID player)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     return 0;
 }
 
 
-//Yukti
-// Get the most recent move of a given player
-void lastMove(DracView currentView, PlayerID player,
-                 LocationID *start, LocationID *end)
-{
-    //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-    return;
-}
-
-
-//Jessie
-// Find out what minions are placed at the specified location
-void whatsThere(DracView currentView, LocationID where,
-                         int *numTraps, int *numVamps)
-{
-    //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-    return;
-}
-
 //// Functions that return information about the history of the game
 
 //Yukti
 // Fills the trail array with the location ids of the last 6 turns
-void giveMeTheTrail(DracView currentView, PlayerID player,
+void giveMeTheTrail(HunterView currentView, PlayerID player,
                             LocationID trail[TRAIL_SIZE])
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
@@ -113,17 +101,16 @@ void giveMeTheTrail(DracView currentView, PlayerID player,
 
 
 //Vivian
-// What are my (Dracula's) possible next moves (locations)
-LocationID *whereCanIgo(DracView currentView, int *numLocations, int road, int sea)
+// What are my (player's) possible next moves (locations)
+LocationID *whereCanIgo(HunterView currentView, int *numLocations, int road, int sea)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
     return NULL;
 }
 
 //Vivian
-
 // What are the specified player's next possible moves
-LocationID *whereCanTheyGo(DracView currentView, int *numLocations,
+LocationID *whereCanTheyGo(HunterView currentView, int *numLocations,
                            PlayerID player, int road, int rail, int sea)
 {
     //REPLACE THIS WITH YOUR OWN IMPLEMENTATION
