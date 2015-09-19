@@ -8,15 +8,19 @@
 #include "Map.h"
 // #include "Map.h" ... if you decide to use the Map ADT
 //Rimmal
+typedef struct Players{
+    int healthPoints;
+    LocationID currLocation;
+    int trail[TRAIL_SIZE];
+
+}Players;
 struct gameView {
     
     Map gameMap;
     Round currentRound;
-    PlayerID players[NUM_PLAYERS];
+    Players players[NUM_PLAYERS];
     PlayerID currentPlayer;
     PlayerMessage messages[];
-    int Health[NUM_PLAYERS];
-    int trail[NUM_PLAYERS][TRAIL_SIZE];
     int currentScore;
     int currentTurn; 
     
